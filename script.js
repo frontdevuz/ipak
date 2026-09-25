@@ -29,8 +29,12 @@ function prevSlide() { goToSlide(Math.max(current - 1, 0), -1); }
 nextBtn.addEventListener('click', nextSlide);
 prevBtn.addEventListener('click', prevSlide);
 fullscreenBtn.addEventListener('click', async () => {
-  if (!document.fullscreenElement) await document.documentElement.requestFullscreen?.();
-  else await document.exitFullscreen?.();
+  try {
+    if (!document.fullscreenElement) await document.documentElement.requestFullscreen?.();
+    else await document.exitFullscreen?.();
+  } catch (error) {
+    console.warn('To‘liq ekran rejimi mavjud emas:', error);
+  }
 });
 
 document.addEventListener('keydown', (event) => {
