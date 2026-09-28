@@ -8,6 +8,31 @@ const fullscreenBtn = document.getElementById('fullscreenBtn');
 let current = 0;
 let isAnimating = false;
 
+const slideContext = [
+  'Ipak yo‘li miloddan avvalgi II asrdan boshlab Sharq va G‘arb o‘rtasidagi aloqalarni kuchaytirgan.',
+  'Chjan Syan elchiligi Xitoyni Farg‘ona va Baqtriya yo‘llari bilan bog‘lagan dastlabki diplomatik qadamlardan biri edi.',
+  'Movarounnahrning vohalari suv, yaylov va tog‘ dovonlari sabab karvonlar uchun tabiiy chorraha bo‘lgan.',
+  'Lojuvard, feruza va oltin kabi boyliklar savdo bilan birga rang, bezak va hunarmandchilik usullarini ham yoygan.',
+  'Samarqand Afrasiyob, Registon va Temuriylar davri ilmiy muhiti bilan bir necha tarixiy qatlamni saqlab qolgan.',
+  'Karvonsaroylarda savdogarlar bilan birga tarjimonlar, hunarmandlar va yo‘l ko‘rsatuvchilar ham xizmat qilgan.',
+  'Farg‘ona otlari qadimiy Xitoy manbalarida “samoviy otlar” sifatida tilga olingan.',
+  'Savdo mahsulotlari bilan birga retseptlar, mato naqshlari, musiqa va hisoblash usullari ham ko‘chib yurgan.',
+  'Samarqand qog‘ozi bilimni ko‘paytirish xarajatini kamaytirib, kutubxona va madrasalar rivojiga yordam bergan.',
+  'Ipak yo‘li shaharlarida zardashtiylik, buddizm, nasroniylik va islom izlari turli davrlarda yonma-yon uchraydi.',
+  'Al-Xorazmiy, Beruniy, Ibn Sino va Ulug‘bek asarlari mahalliy ilmni keng xalqaro ilmiy an’anaga bog‘lagan.',
+  'Rabotlar, sardobalar va karvonsaroylar masofani emas, safarning xavfini kamaytirgan tarixiy infratuzilma edi.',
+  'Dengiz yo‘llari kuchaygach, quruqlik savdosi qisqardi, ammo shaharlar va hunarlarning madaniy ta’siri saqlanib qoldi.',
+  'Bugungi temir yo‘l va turizm yo‘nalishlari qadimiy savdo geografiyasining zamonaviy shakldagi davomidir.',
+  'Ipak yo‘lining asosiy merosi mahsulot emas, xalqlar o‘rtasida bilim va tajriba almashinuvi tizimidir.'
+];
+
+slides.forEach((slide, index) => {
+  const note = document.createElement('aside');
+  note.className = 'context-note';
+  note.innerHTML = `<b>Tarixiy dalil</b><span>${slideContext[index]}</span>`;
+  slide.appendChild(note);
+});
+
 function goToSlide(index, direction = 1) {
   if (isAnimating || index === current || index < 0 || index >= slides.length) return;
   isAnimating = true;

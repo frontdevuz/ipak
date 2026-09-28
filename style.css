@@ -64,6 +64,11 @@ button { cursor: pointer; }
 .gallery-ceramic { background-image: url("https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=900&q=85"); }
 .gallery-market { background-image: url("https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=900&q=85"); }
 .image-detail { position: absolute; right: 18px; bottom: 18px; max-width: 150px; padding: 8px 10px; color: rgba(255,255,255,.84); background: rgba(16,43,61,.68); font-size: 9px; line-height: 1.4; }
+.context-note { position: absolute; right: 10vw; bottom: 13vh; z-index: 3; display: flex; flex-direction: column; gap: 5px; width: min(260px, 25vw); padding-left: 13px; border-left: 2px solid var(--gold); color: var(--muted); font-size: 10px; line-height: 1.55; }
+.context-note b { color: var(--brown); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
+.context-note span { display: block; }
+.dark-slide .context-note, .city-slide .context-note, .future-slide .context-note, .final-slide .context-note { color: rgba(244,239,229,.66); }
+.dark-slide .context-note b, .city-slide .context-note b, .future-slide .context-note b, .final-slide .context-note b { color: var(--gold-bright); }
 @media (max-width: 1100px) and (min-width: 851px) { .split-slide, .split-slide.reverse, .infrastructure-slide { grid-template-columns: 1fr; gap: 24px; overflow-y: auto; padding-top: 13vh; padding-bottom: 15vh; }.split-slide .visual-panel { order: 2; height: 28vh; min-height: 170px; }.split-slide .slide-content, .infrastructure-slide .slide-content { order: 1; max-width: 700px; } }
 @media print { body { overflow: visible; }.topbar, .bottombar, .slide-counter { display: none; }.slide { position: relative; min-height: 100vh; opacity: 1; visibility: visible; transform: none; page-break-after: always; }.slide:not(.active) { display: flex; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
@@ -73,6 +78,8 @@ button { cursor: pointer; }
 .lead { font-size: 17px; }.map-note { font-size: 14px; line-height: 1.65; }.feature-list small, .duo-cards span, .beliefs span, .infra-list span, .stat-card span, .goods-column p, .future-note { font-size: 13px; line-height: 1.6; }.section-intro { font-size: 14px; }.fact-line { font-size: 13px; }.collapse-flow span { font-size: 13px; line-height: 1.55; }
 @media (max-width: 850px) { .lead { font-size: 15px; }.map-note { font-size: 12px; }.feature-list small, .duo-cards span, .beliefs span, .infra-list span, .stat-card span, .goods-column p, .future-note { font-size: 12px; }.section-intro, .fact-line, .collapse-flow span { font-size: 11px; } }
 @media (max-width: 850px) { .institution-name { font-size: 9px; letter-spacing: .13em; margin-bottom: 13px; }.course-name { font-size: 10px; letter-spacing: .12em; margin-top: 17px; } }
+.context-note { right: 8vw; bottom: 10vh; width: 42vw; font-size: 9px; }
+@media (max-width: 850px) { .context-note { position: relative; right: auto; bottom: auto; width: min(100%, 360px); margin-top: 18px; font-size: 10px; }.slide-hero .context-note { display: none; }.city-slide .context-note, .future-slide .context-note, .final-slide .context-note { position: absolute; right: 10vw; bottom: 13vh; width: 45vw; } }
 .image-samarkand { background-image: linear-gradient(135deg, rgba(16,43,61,.2), transparent 55%), url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Registan_Samarkand_Uzbekistan.JPG/1280px-Registan_Samarkand_Uzbekistan.JPG"); }
 .image-caravan { background-image: linear-gradient(135deg, rgba(117,75,53,.18), transparent 60%), url("https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Rabati_Malik_caravanserai_01.jpg/1280px-Rabati_Malik_caravanserai_01.jpg"); }
 .image-registan { background-image: linear-gradient(90deg, rgba(16,43,61,.22), transparent), url("https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Registan_01.jpg/1280px-Registan_01.jpg"); }
